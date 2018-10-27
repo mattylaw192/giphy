@@ -39,15 +39,14 @@ displayButtons();
 
 $("button").on("click", function buildQueryURL() {
     var animal = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=47knbJVz9ApSdFnyQ8P7WGFSfASrNSck";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=47knbJVz9ApSdFnyQ8P7WGFSfASrNSck&limit=10";
     console.log(animal);
     console.log(queryURL);
 
     $.ajax({
         URL: queryURL,
         method: "GET",
-        crossDomain: true,
-        dataType: 'html',
+      
 
     })
     
