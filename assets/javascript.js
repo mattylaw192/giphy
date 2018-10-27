@@ -9,6 +9,7 @@ function displayButtons() {
     for (var i = 0; i < animals.length; i++){
         var a = $("<button>");
         a.addClass("animal");
+        a.addClass("btn btn-success");
         a.attr("data-name",animals[i]);
         a.text(animals[i]);
         $("#animal-buttons").append(a);
@@ -25,18 +26,14 @@ $("#add-animal").on("click", function(event){
     animals.push(animal);
 
     displayButtons();
+    
 
 
 })
 
-
-
-
 displayButtons();
 
-
-
-function buildQueryURL(){
+$("#animal").on("click",function buildQueryURL(){
     var animal = $(this).attr("data-name");
     var queryURL = "http://api.giphy.com/v1/gifs/search?" + animal + "&api_key=47knbJVz9ApSdFnyQ8P7WGFSfASrNSck";
 
@@ -54,9 +51,9 @@ function buildQueryURL(){
     });
 
 
-};
+});
 
-buildQueryURL();
+
 
 
 
